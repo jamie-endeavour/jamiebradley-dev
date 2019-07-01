@@ -1,5 +1,5 @@
-import React from 'react';
-import Divider from '../divider/divider';
+import React from 'react'
+import Divider from '../divider/divider'
 
 const AboutBlock = () => (
   <div>
@@ -15,6 +15,6 @@ const AboutBlock = () => (
     </p>
     <Divider />
   </div>
-);
+)
 
-export default AboutBlock;
+export default AboutBlock

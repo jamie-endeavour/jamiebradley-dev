@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const Divider = () => <div style={{ height: 1, backgroundColor: '#EDEDED' }} />;
+const Divider = () => <div style={{ height: 1, backgroundColor: '#EDEDED' }} />
 
-export default Divider;
+export default Divider

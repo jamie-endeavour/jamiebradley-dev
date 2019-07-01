@@ -1,4 +1,4 @@
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 
 export default {
   name: 'event',
@@ -83,7 +83,7 @@ export default {
       slug: 'slug',
       media: 'mainImage'
     },
-    prepare ({title = 'No title', eventDate, slug, media}) {
+    prepare({ title = 'No title', eventDate, slug, media }) {
       const dateSegment = format(eventDate, 'YYYY/MM')
       const path = `/${dateSegment}/${slug.current}/`
       return {

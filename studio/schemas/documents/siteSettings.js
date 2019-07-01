@@ -2,7 +2,7 @@ export default {
   name: 'siteSettings',
   type: 'document',
   title: 'Site Settings',
-  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+  __experimental_actions: [/* 'create', */ 'update', /* 'delete', */ 'publish'],
   fields: [
     {
       name: 'title',
@@ -20,10 +20,10 @@ export default {
       type: 'array',
       title: 'Keywords',
       description: 'Add keywords that describes your blog.',
-      of: [{type: 'string'}],
+      of: [{ type: 'string' }],
       options: {
         layout: 'tags'
       }
-    },
+    }
   ]
 }

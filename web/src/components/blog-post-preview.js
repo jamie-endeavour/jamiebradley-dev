@@ -1,11 +1,11 @@
-import { format } from 'date-fns';
-import { Link } from 'gatsby';
-import React from 'react';
-import { cn, getBlogUrl } from '../lib/helpers';
-import PortableText from './portableText';
+import { format } from 'date-fns'
+import { Link } from 'gatsby'
+import React from 'react'
+import { cn, getBlogUrl } from '../lib/helpers'
+import PortableText from './portableText'
 
-import styles from './blog-post-preview.module.css';
-import { responsiveTitle3 } from './typography.module.css';
+import styles from './blog-post-preview.module.css'
+import { responsiveTitle3 } from './typography.module.css'
 
 function BlogPostPreview(props) {
   return (
@@ -23,7 +23,7 @@ function BlogPostPreview(props) {
         )}
       </div>
     </Link>
-  );
+  )
 }
 
-export default BlogPostPreview;
+export default BlogPostPreview

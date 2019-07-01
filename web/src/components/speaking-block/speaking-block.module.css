@@ -1,0 +1,11 @@
+@import '../../styles/custom-properties.css';
+
+.speakingBlock {
+  @nest & a {
+    color: #000000;
+  }
+
+  @nest & a:hover {
+    color: var(--color-accent);
+  }
+}

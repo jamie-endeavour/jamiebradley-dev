@@ -4,10 +4,7 @@ import Divider from '../divider/divider'
 const AboutBlock = () => (
   <div>
     <h2>
-      Hey, I'm Jamie{' '}
-      <span role="img" aria-label="Waving Hand">
-        👋🏻
-      </span>
+      Hey, I'm Jamie.
     </h2>
     <p>
       I'm a full blown JAMstack nerd, founder of Endeavour Digital, husband, father of two

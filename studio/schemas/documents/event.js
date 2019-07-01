@@ -1,9 +1,9 @@
 import {format} from 'date-fns'
 
 export default {
-  name: 'post',
+  name: 'event',
   type: 'document',
-  title: 'Blog Post',
+  title: 'Event',
   fields: [
     {
       name: 'title',
@@ -22,22 +22,10 @@ export default {
       }
     },
     {
-      name: 'publishedAt',
+      name: 'eventDate',
       type: 'datetime',
-      title: 'Published at',
+      title: 'Event Date',
       description: 'This can be used to schedule post for publishing'
-    },
-    {
-      name: 'mainImage',
-      type: 'mainImage',
-      title: 'Main image'
-    },
-    {
-      name: 'excerpt',
-      type: 'excerptPortableText',
-      title: 'Excerpt',
-      description:
-        'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
       name: 'categories',
@@ -60,11 +48,11 @@ export default {
   ],
   orderings: [
     {
-      name: 'publishingDateAsc',
-      title: 'Publishing date new–>old',
+      name: 'eventDateAsc',
+      title: 'Event date new–>old',
       by: [
         {
-          field: 'publishedAt',
+          field: 'eventDate',
           direction: 'asc'
         },
         {
@@ -74,11 +62,11 @@ export default {
       ]
     },
     {
-      name: 'publishingDateDesc',
-      title: 'Publishing date old->new',
+      name: 'eventDateDesc',
+      title: 'Event date old->new',
       by: [
         {
-          field: 'publishedAt',
+          field: 'eventDate',
           direction: 'desc'
         },
         {
@@ -91,17 +79,17 @@ export default {
   preview: {
     select: {
       title: 'title',
-      publishedAt: 'publishedAt',
+      eventDate: 'eventDate',
       slug: 'slug',
       media: 'mainImage'
     },
-    prepare ({title = 'No title', publishedAt, slug, media}) {
-      const dateSegment = format(publishedAt, 'YYYY/MM')
+    prepare ({title = 'No title', eventDate, slug, media}) {
+      const dateSegment = format(eventDate, 'YYYY/MM')
       const path = `/${dateSegment}/${slug.current}/`
       return {
         title,
         media,
-        subtitle: publishedAt ? path : 'Missing publishing date'
+        subtitle: eventDate ? path : 'Missing publishing date'
       }
     }
   }

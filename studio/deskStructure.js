@@ -1,9 +1,10 @@
 import S from '@sanity/desk-tool/structure-builder'
 import MdSettings from 'react-icons/lib/md/settings'
 import MdPerson from 'react-icons/lib/md/person'
+import MdDateRange from 'react-icons/lib/md/date-range'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'siteSettings'].includes(listItem.getId())
+  !['category', 'post', 'event', 'siteSettings'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -23,10 +24,10 @@ export default () =>
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
       S.listItem()
-        .title('Authors')
-        .icon(MdPerson)
-        .schemaType('author')
-        .child(S.documentTypeList('author').title('Authors')),
+        .title('Events')
+        .schemaType('event')
+        .icon(MdDateRange)
+        .child(S.documentTypeList('event').title('Events')),
       S.listItem()
         .title('Categories')
         .schemaType('category')

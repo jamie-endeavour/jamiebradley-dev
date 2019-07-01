@@ -10,8 +10,8 @@ const AboutBlock = () => (
       </span>
     </h2>
     <p>
-      I'm a full blown JAMstack nerd, founder of Endeavour Digital, happily married and a proud
-      father with two incredible daughters.
+      I'm a full blown JAMstack nerd, founder of Endeavour Digital, husband, father of two
+      incredible girls and a Type One Diabetic.
     </p>
     <Divider />
   </div>

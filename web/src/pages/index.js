@@ -5,7 +5,10 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
+
 import AboutBlock from '../components/about-block/about-block'
+import SpeakingBlock from '../components/speaking-block'
+
 import BlogPostPreviewList from '../components/blog-post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
@@ -95,6 +98,8 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>Welcome to the personal blog of {site.title}</h1>
         <AboutBlock />
+        <SpeakingBlock />
+
         {postNodes && (
           <BlogPostPreviewList
             nodes={postNodes}

@@ -19,3 +19,21 @@ body > div,
 body > div > div {
   height: 100%;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-serif);
+  font-weight: 400;
+}
+
+/**
+ * Serif Override
+ * This might be used for links which need to use the serif style.
+ */
+.u-serif-override {
+  font-family: var(--font-family-serif);
+}

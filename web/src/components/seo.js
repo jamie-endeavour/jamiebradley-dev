@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
-function SEO ({description, lang, meta, keywords, title}) {
+function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -14,9 +14,15 @@ function SEO ({description, lang, meta, keywords, title}) {
 
         return (
           <Helmet
-            htmlAttributes={{lang}}
+            htmlAttributes={{ lang }}
             title={title}
             titleTemplate={title === siteTitle ? '%s' : `%s | ${siteTitle}`}
+            link={[
+              {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap'
+              }
+            ]}
             meta={[
               {
                 name: 'description',
@@ -54,9 +60,9 @@ function SEO ({description, lang, meta, keywords, title}) {
               .concat(
                 keywords && keywords.length > 0
                   ? {
-                    name: 'keywords',
-                    content: keywords.join(', ')
-                  }
+                      name: 'keywords',
+                      content: keywords.join(', ')
+                    }
                   : []
               )
               .concat(meta)}
@@ -85,7 +91,7 @@ export default SEO
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
-    site: sanitySiteSettings(_id: {eq: "siteSettings"}) {
+    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
       title
       description
       keywords

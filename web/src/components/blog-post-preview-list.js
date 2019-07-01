@@ -1,10 +1,10 @@
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import React from 'react'
 import BlogPostPreview from './blog-post-preview'
 
 import styles from './blog-post-preview-list.module.css'
 
-function BlogPostPreviewGrid (props) {
+function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
@@ -16,7 +16,7 @@ function BlogPostPreviewGrid (props) {
             </li>
           ))}
       </ul>
-      {props.browseMoreHref && (
+      {props.browseMoreHref && props.showMoreLink && (
         <div className={styles.browseMoreNav}>
           <Link to={props.browseMoreHref}>Browse more</Link>
         </div>
@@ -28,7 +28,8 @@ function BlogPostPreviewGrid (props) {
 BlogPostPreviewGrid.defaultProps = {
   title: '',
   nodes: [],
-  browseMoreHref: ''
+  browseMoreHref: '',
+  showMoreLink: false
 }
 
 export default BlogPostPreviewGrid

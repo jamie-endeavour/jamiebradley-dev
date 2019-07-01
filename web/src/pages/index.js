@@ -5,6 +5,7 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
+import AboutBlock from '../components/about-block/about-block'
 import BlogPostPreviewList from '../components/blog-post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
@@ -78,8 +79,8 @@ const IndexPage = props => {
   const site = (data || {}).site
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
     : []
 
   if (!site) {
@@ -90,18 +91,15 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
+      <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        <h1 hidden>Welcome to the personal blog of {site.title}</h1>
+        <AboutBlock />
         {postNodes && (
           <BlogPostPreviewList
-            title="Latest blog posts"
             nodes={postNodes}
-            browseMoreHref="/archive/"
+            browseMoreHref="/blog/"
+            showMoreLink={postNodes.length > 6}
           />
         )}
       </Container>

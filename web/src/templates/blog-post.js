@@ -1,5 +1,5 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPost from '../components/blog-post'
@@ -8,7 +8,7 @@ import Layout from '../containers/layout'
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
-    post: sanityPost(id: {eq: $id}) {
+    post: sanityPost(id: { eq: $id }) {
       id
       publishedAt
       categories {
@@ -23,7 +23,7 @@ export const query = graphql`
       slug {
         current
       }
-      _rawBody(resolveReferences: {maxDepth: 5})
+      _rawBody(resolveReferences: { maxDepth: 5 })
       authors {
         _key
         author {
@@ -56,11 +56,11 @@ export const query = graphql`
 `
 
 const BlogPostTemplate = props => {
-  const {data, errors} = props
+  const { data, errors } = props
   const post = data && data.post
   return (
     <Layout>
-      {errors && <SEO title='GraphQL Error' />}
+      {errors && <SEO title="GraphQL Error" />}
       {post && <SEO title={post.title || 'Untitled'} />}
 
       {errors && (

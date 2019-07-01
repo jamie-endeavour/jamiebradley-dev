@@ -1,4 +1,4 @@
-import {format} from 'date-fns'
+import { format } from 'date-fns';
 
 export default {
   name: 'post',
@@ -28,16 +28,16 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
-      name: 'mainImage',
-      type: 'mainImage',
-      title: 'Main image'
-    },
-    {
       name: 'excerpt',
       type: 'excerptPortableText',
       title: 'Excerpt',
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.'
+    },
+    {
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Main image'
     },
     {
       name: 'categories',
@@ -95,14 +95,15 @@ export default {
       slug: 'slug',
       media: 'mainImage'
     },
-    prepare ({title = 'No title', publishedAt, slug, media}) {
-      const dateSegment = format(publishedAt, 'YYYY/MM')
-      const path = `/${dateSegment}/${slug.current}/`
+    prepare({ title = 'No title', publishedAt, slug, media }) {
+      const dateSegment = format(publishedAt, 'MM/YYYY');
+      const path = `/blog/${dateSegment}/${slug.current}/`;
+
       return {
         title,
         media,
-        subtitle: publishedAt ? path : 'Missing publishing date'
-      }
+        subtitle: path
+      };
     }
   }
-}
+};

@@ -100,6 +100,7 @@ const IndexPage = props => {
         <AboutBlock />
         <SpeakingBlock />
 
+        <h2>Writing</h2>
         {postNodes && (
           <BlogPostPreviewList
             nodes={postNodes}

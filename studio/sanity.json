@@ -7,6 +7,13 @@
     "projectId": "ghm8pz5f",
     "dataset": "production"
   },
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "development"
+      }
+    }
+  },
   "plugins": [
     "@sanity/base",
     "@sanity/components",

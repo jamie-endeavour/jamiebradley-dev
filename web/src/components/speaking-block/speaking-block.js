@@ -5,7 +5,7 @@ import styles from './speaking-block.module.css'
 const SpeakingBlock = () => (
   <>
     <div className={styles.speakingBlock}>
-      <h2>Speaking</h2>
+      <h2 className={styles.speakingTitle}>Speaking</h2>
       <p>
         I'm quite new to speaking and I've had the pleasure of speaking at a handful of meetups in
         and around the North of England,{' '}

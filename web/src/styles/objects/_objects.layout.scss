@@ -1,0 +1,19 @@
+/**
+ * Layout
+*/
+
+.o-layout {
+  display: grid;
+}
+
+.o-layout--spaced {
+  grid-gap: $global-spacing-unit;
+}
+
+.o-layout--center {
+  align-items: center;
+}
+
+
+// Generate our grid helpers
+@include grid($global-column-unit);

@@ -1,0 +1,18 @@
+/**
+ * List Object
+ */
+
+.o-list {
+  list-style-type: none;
+}
+
+.o-list--inline {
+  .o-list__item {
+    display: inline-block;
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

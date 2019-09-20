@@ -1,0 +1,14 @@
+/**
+ * Colour function
+ */
+
+// Gets a colour from the newcastle colours map based on the
+// provided key.
+//
+// Example
+// $button-color: newcastle-color('primary'); // #f4005c;
+//
+
+@function color($key: 'primary') {
+  @return map-get($brand-colors, $key);
+}

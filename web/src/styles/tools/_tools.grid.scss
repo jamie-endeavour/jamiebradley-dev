@@ -1,0 +1,92 @@
+/**
+ * Grid Generator
+ *
+ * The mixin generates grid layout wrapper classes based
+ * on the number of columns that are passed into the mixin
+ * via the $cols argument. This defaults to a 12 column grid.
+ *
+ * Generates a class like .o-layout--3-col {}
+*/
+
+
+// Next Key Helper Function
+// The next key helper function is used to acquire the next key
+// from the device map which was defined in the global settings.
+
+@function nextKey($current-value, $mapped-list: $mq-breakpoints) {
+  // get current key from list
+  $the-list: map-keys($mapped-list);
+
+  //find index of current value and add 1
+  $the-index: ( index( $the-list, $current-value) ) + 1;
+
+  // get value from list with new index
+  $new-value : nth($the-list, $the-index);
+
+  @return $new-value;
+}
+
+
+@mixin grid($cols: 12) {
+
+  // Generate the base layout styles
+  @for $i from 0 to $cols {
+    .o-layout--#{$i + 1}-col {
+      grid-template-columns: repeat($i + 1, 1fr);
+    }
+  }
+
+  // Generate the breakpoint specific styles
+  @each $breakpoint, $size in $mq-breakpoints {
+    $mapped-keys: map-keys($mq-breakpoints);
+
+    // Get the index of the current breakpoint
+    // 1 = mobile
+    // 2 = tablet
+    // 3 = desktop
+    // 4 = wide
+    $index : index($mapped-keys, $breakpoint);
+
+    // We assume the first device is 'mobile' so we need to ensure
+    // the $until value is the next value in the map of keys.
+    //
+    // This will generate a class like:
+    // .o-layout--4-col-mobile
+    @if $breakpoint == mobile {
+      @include mq($until: nextKey($breakpoint)) {
+        @for $i from 0 to $cols {
+          .o-layout--#{$i + 1}-col-#{$breakpoint} {
+            grid-template-columns: repeat($i + 1, auto);
+          }
+        }
+      }
+    }
+
+    // The next step is to handle media queries to ensure the class
+    // only applies styles to the device that has been specified.
+    //
+    // This will generate a class like:
+    // .o-layout--4-col-tablet
+    @if $breakpoint != mobile and $index < length($mq-breakpoints) {
+      $nextDevice: nextKey($breakpoint);
+
+      @if $breakpoint == tablet {
+        @include mq($from: $breakpoint, $until: $nextDevice) {
+          @for $i from 0 to $cols {
+            .o-layout--#{$i + 1}-col-#{$breakpoint} {
+              grid-template-columns: repeat($i + 1, auto);
+            }
+          }
+        }
+      } @else {
+        @include mq($from: $breakpoint) {
+          @for $i from 0 to $cols {
+            .o-layout--#{$i + 1}-col-#{$breakpoint} {
+              grid-template-columns: repeat($i + 1, auto);
+            }
+          }
+        }
+      }
+    }
+  }
+}

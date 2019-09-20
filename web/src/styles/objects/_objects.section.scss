@@ -1,0 +1,19 @@
+/**
+ * Section Object
+ */
+
+$section-spacing: 40px;
+
+.o-section {
+  margin: $section-spacing 0;
+
+  .o-section__title {
+    margin-bottom: $global-spacing-unit;
+    text-align: center;
+  }
+
+  .o-section__cta-wrap {
+    text-align: center;
+    margin: $section-spacing 0;
+  }
+}

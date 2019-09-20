@@ -1,0 +1,20 @@
+/**
+ * Media Object
+*/
+
+.o-media {
+  display: flex;
+  align-items: flex-start;
+
+  .o-media__figure {
+    margin-right: 1em;
+  }
+
+  .o-media__body {
+    flex: 1;
+  }
+}
+
+.o-media--center {
+  align-items: center;
+}

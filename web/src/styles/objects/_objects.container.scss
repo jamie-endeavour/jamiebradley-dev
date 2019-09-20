@@ -1,0 +1,11 @@
+/**
+ * Container
+ */
+
+// Global container object
+// Use this as a page level container.
+
+.o-container {
+  margin: 0 auto;
+  max-width: $global-container-width;
+}

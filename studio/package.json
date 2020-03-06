@@ -10,6 +10,7 @@
     "build": "sanity build",
     "graphql-deploy": "sanity graphql deploy --playground",
     "lint": "eslint .",
+    "netlify-build": "echo 'Please deploy via the cli locally. This is to save on build minutes :)'",
     "test": "sanity check"
   },
   "dependencies": {

@@ -68,3 +68,6 @@ yarn-error.log
 
 # Secrets
 .env.development
+
+# Eleventy
+_site/

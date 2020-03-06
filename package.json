@@ -1,20 +1,24 @@
 {
-  "private": true,
-  "name": "jamiebradley-dev",
+  "name": "jamie-bradley-dev",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "dev": "lerna run dev --parallel",
-    "format": "lerna run format",
-    "build-studio": "(cd studio && npm run build)",
-    "build-web": "cd web && yarn build",
-    "graphql-deploy": "lerna run graphql-deploy",
-    "lint": "lerna run lint",
-    "postinstall": "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "eleventy && yarn sass",
+    "watch": "yarn sass:watch && eleventy --watch",
+    "serve": "yarn assets && eleventy --serve",
+    "dev": "yarn serve",
+    "debug": "DEBUG=* eleventy",
+    "sass": "node-sass -r resources/scss/styles.scss -o _assets/css  --output-style compressed",
+    "sass:watch": "yarn sass -w",
+    "assets": "mkdir -p _site/ && cp -R _assets _site/"
   },
+  "keywords": [],
+  "author": "Jamie Bradley",
+  "license": "ISC",
   "devDependencies": {
-    "@sanity/cli": "^0.141.6",
-    "lerna": "^3.16.1"
+    "@11ty/eleventy": "^0.10.0",
+    "node-sass": "^4.13.0",
+    "sass-mq": "^5.0.1"
   }
 }

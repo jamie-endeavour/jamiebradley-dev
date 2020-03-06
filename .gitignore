@@ -8,7 +8,7 @@
 /lerna-debug.log
 
 # Lock files
-/yarn.lock
+# /yarn.lock
 
 # IDE Files
 .idea/

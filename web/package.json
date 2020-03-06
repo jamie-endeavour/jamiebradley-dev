@@ -1,15 +1,15 @@
 {
-  "name": "geist-v2",
+  "name": "jamie-bradley-dev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "yarn sass && eleventy",
+    "build": "eleventy && yarn sass",
     "watch": "yarn sass:watch && eleventy --watch",
     "serve": "yarn assets && eleventy --serve",
     "dev": "yarn serve",
     "debug": "DEBUG=* eleventy",
-    "sass": "node-sass -r resources/scss/styles.scss -wo _assets/css  --output-style compressed",
+    "sass": "node-sass -r resources/scss/styles.scss -o _assets/css  --output-style compressed",
     "sass:watch": "yarn sass -w",
     "assets": "mkdir -p _site/ && cp -R _assets _site/"
   },

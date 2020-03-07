@@ -1,12 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMstack Introduction</title>
-    <meta name="Description" content="Site description">
-    
-    <style>/* 11ty Endeavour Starter */
+/* 11ty Endeavour Starter */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -452,19 +444,3 @@ body {
     display: block;
     max-width: 800px;
     margin: 64px auto; }
-</style>
-  </head>
-  <body>
-    
-    
-<h1>My about page!</h1>
-
-    <footer class="footer">
-      <div class="container">
-        <p>
-          Developed with 11ty &amp; Sanity | Hosted on Netlify
-        </p>
-      </div>
-    </footer>
-  </body>
-</html>

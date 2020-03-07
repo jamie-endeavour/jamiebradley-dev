@@ -4,6 +4,9 @@ layout: layouts/default.njk
 
 <header class="header">
   <div class="container">
+    <p class="header__back-link">
+      <a href="{{ '/' | url }}">← Home</a>
+    </p>
     <h1 class="header__title">{{ post.title }}</h1>
   </div>
 </header>
@@ -13,7 +16,5 @@ layout: layouts/default.njk
     <section class="post__body">
       {{ post.body | markdownify | safe }}
     </section>
-
-    <p><a href="{{ '/' | url }}">← Home</a></p>
   </div>
 </article>

@@ -1,7 +1,21 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
+  /**
+   * Clean CSS
+   * Expose clean-css library as the "cssmin" filter
+   */
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
+
+  /**
+   * Markdown Options
+   * This is used in content templates, mainly for Sanity when converting
+   * portable text into markdown content.
+   */
   const options = {
     html: true,
     breaks: true,

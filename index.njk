@@ -18,7 +18,11 @@ layout: layouts/default.njk
         {% set currentPost = post.data.post %}
 
         <article class="post">
-          <h2 class="post__title">{{ currentPost.title }}</h2>
+          <h2 class="post__title">
+            <a href="posts/{{ currentPost.slug.current | slug }}" class="post__link">
+              {{ currentPost.title }}
+            </a>
+          </h2>
           {% if currentPost.excerpt %}
             <div class="post__lede">{{ currentPost.excerpt | markdownify | safe }}</div>
           {% endif %}

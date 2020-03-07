@@ -6,7 +6,7 @@ module.exports = {
     code: ({ node }) => "```" + node.language + "\n" + node.code + "\n```",
     mainImage: ({ node }) =>
       `![${node.alt}](${imageUrl(node)
-        .width(600)
+        .width(800)
         .url()})`
   }
 };

@@ -10,7 +10,8 @@
     "dev": "yarn serve",
     "debug": "DEBUG=* eleventy",
     "sass": "node-sass -r resources/scss/styles.scss -o _assets/css  --output-style compressed",
-    "sass:watch": "yarn sass -w",
+    "sass:dev": "node-sass -r resources/scss/styles.scss -wo _assets/css  --output-style compressed",
+    "sass:watch": "yarn sass:dev",
     "assets": "mkdir -p _site/ && cp -R _assets _site/"
   },
   "keywords": [],

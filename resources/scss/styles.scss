@@ -1,6 +1,8 @@
 /* 11ty Endeavour Starter */
 @import "./normalize";
 
+@import url("https://rsms.me/inter/inter.css");
+
 /**
  * Custom Styles!
  */
@@ -9,6 +11,14 @@
 :root {
   --container-size: 1200px;
   --body-bg: #fefefe;
+}
+
+html {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    font-family: "Inter var", "Helvetica Neue", Arial, sans-serif;
+  }
 }
 
 body {
@@ -29,7 +39,6 @@ body {
  * title.
  */
 .header {
-  margin-bottom: 16px;
   padding: 24px 0;
 }
 
@@ -113,14 +122,49 @@ body {
 /** Post **/
 .post {
   margin-bottom: 80px;
-}
 
-.post__title {
-  font-size: 3.5rem;
-  margin-top: 0;
-}
+  .post__title {
+    font-size: 3.5rem;
+    margin-top: 0;
+  }
 
-.post__lede {
-  font-size: 2rem;
-  line-height: 1.35;
+  .post__lede {
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+
+  // Base Elements for dynamic data.
+  .post__body {
+    ul,
+    li,
+    p {
+      font-size: 2rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 3rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      padding-left: 4rem;
+
+      li {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
 }

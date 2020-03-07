@@ -18,6 +18,13 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "@sanity/block-content-to-markdown": "^0.0.5",
+    "@sanity/client": "^1.149.2",
+    "@sanity/image-url": "^0.140.17",
+    "dotenv": "^8.2.0",
+    "groq": "^1.149.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
     "node-sass": "^4.13.0",
     "sass-mq": "^5.0.1"
   }

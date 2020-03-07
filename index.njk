@@ -12,31 +12,20 @@ layout: layouts/default.njk
   <div class="container">
     <!-- Blog posts -->
     <div class="posts">
-      <article class="post">
-        <h2 class="post__title">
-          My miserable trip to the shops.
-        </h2>
+      {% set postslist = collections.myPosts %}
 
-        <p class="post__lede">
-          I had such a miserable experience at Aldi today. The queues were
-          long, the staff were annoying and it was raining. It was that bad
-          of a day that I just had to talk about it on my blog and publish
-          it to the Internet. That's what we're supposed to do in 2020
-          right?
-        </p>
-      </article>
+      {% for post in postslist | reverse %}
+        {% set currentPost = post.data.post %}
 
-      <article class="post">
-        <h2 class="post__title">
-          My really nice trip to the seaside.
-        </h2>
+        <article class="post">
+          <h2 class="post__title">{{ currentPost.title }}</h2>
+          {% if currentPost.excerpt %}
+            <div class="post__lede">{{ currentPost.excerpt | markdownify | safe }}</div>
+          {% endif %}
 
-        <p class="post__lede">
-          I had such a great experience at the seaside today. All I
-          wanted was an ice cream from my favourite ice cream shop in
-          Saltburn. But guess what? It was buy one get one free!
-        </p>
-      </article>
+          <time class="postlist-date" datetime="{{ currentPost.publishedAt }}">{{ currentPost.publishedAt|readableDate }}</time>
+        </article>
+      {% endfor %}
     </div>
 
     <!-- About card -->

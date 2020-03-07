@@ -1,0 +1,19 @@
+---
+layout: layouts/default.njk
+---
+
+<header class="header">
+  <div class="container">
+    <h1 class="header__title">{{ post.title }}</h1>
+  </div>
+</header>
+
+<article class="post">
+  <div class="container">
+    <section class="post__body">
+      {{ post.body | markdownify | safe }}
+    </section>
+
+    <p><a href="{{ '/' | url }}">← Home</a></p>
+  </div>
+</article>

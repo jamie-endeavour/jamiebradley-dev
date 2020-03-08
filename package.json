@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy && yarn sass",
+    "build": "eleventy && gulp",
     "serve": "eleventy --serve",
     "dev": "eleventy --serve --watch",
     "debug": "DEBUG=* eleventy",

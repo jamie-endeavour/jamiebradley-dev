@@ -404,7 +404,8 @@ body {
     @media screen and (min-width: 768px) {
       .card--media {
         grid-gap: 2rem;
-        grid-template-columns: auto auto; } } }
+        grid-template-columns: auto auto;
+        text-align: left; } } }
 
 .card--featured {
   border-bottom: 6px solid var(--purple);

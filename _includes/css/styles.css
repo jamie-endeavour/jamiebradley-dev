@@ -1,12 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMstack Introduction</title>
-    <meta name="Description" content="Site description">
-    
-    <style>/* 11ty Endeavour Starter */
+/* 11ty Endeavour Starter */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -484,69 +476,3 @@ body {
     @media screen and (min-width: var(--tablet-size)) {
       .post .post__body img {
         max-width: 800px; } }
-</style>
-  </head>
-  <body>
-    
-    
-<header class="header">
-  <div class="container">
-    <h1 class="header__title">The Ramblings of a Developer.</h1>
-  </div>
-</header>
-
-<main>
-  <div class="container">
-    <!-- Blog posts -->
-    <div class="posts">
-      
-
-      
-        
-
-        <article class="post">
-          <h2 class="post__title">
-            <a href="posts/jamstack-whats-the-fuss" class="post__link">
-              JAMstack. What&#39;s the fuss?
-            </a>
-          </h2>
-          
-            <div class="post__lede"><p>So this JAMstack thing has really taken off. But why? Is it just a phase? Is it another fecking JavaScript framework? Is it yet another thing that we need to learn? Actually no! It's neither and today I'm going to tell you what it is and why it's awesome. 🎉</p>
-</div>
-          
-
-          <time class="postlist-date" datetime="2019-06-30T23:00:00.000Z">Mon Jul 01 2019</time>
-        </article>
-      
-    </div>
-
-    <!-- About card -->
-    <article class="card card--media card--featured">
-      <div>
-        <img
-          class="card__image"
-          src="https://cdn.sanity.io/images/3do82whm/next/370b117ccdf6d3f10a218e3bee93ff1ef19dc340-400x400.png?w=720&h=720&fit=clip&auto=format"
-          alt="Jamie Bradley"
-        />
-      </div>
-      <div>
-        <h3 class="card__title">About Me</h3>
-        <p class="card__copy">
-          Hey! My name is Jamie Bradley. I am the founder of Endeavour
-          Digital and a Lead Front End Engineer. I live near a town called
-          Middlesbrough and I enjoy playing squash.
-        </p>
-      </div>
-    </article>
-  </div>
-</main>
-
-    <footer class="footer">
-      <div class="container">
-        <p>
-          Developed with 11ty &amp; Sanity | Hosted on Netlify
-        </p>
-      </div>
-    </footer>
-  </body>
-</html>

@@ -1,7 +1,13 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
+  /**
+   * Markdown Options
+   * This is used in content templates, mainly for Sanity when converting
+   * portable text into markdown content.
+   */
   const options = {
     html: true,
     breaks: true,

@@ -14,7 +14,6 @@
   --border-radius: 5px;
   --purple: #9473e2;
   --purple-dark: #7d55db;
-  --tablet-size: 768px;
 }
 
 html {
@@ -38,7 +37,7 @@ body {
   max-width: var(--container-size);
   padding: 0 16px;
 
-  @media screen and (min-width: var(--tablet-size)) {
+  @media screen and (min-width: 768px) {
     padding: 0;
   }
 }
@@ -53,7 +52,7 @@ body {
   .header__title {
     font-size: 3rem;
 
-    @media screen and (min-width: var(--tablet-size)) {
+    @media screen and (min-width: 768px) {
       font-size: 6rem;
     }
   }
@@ -132,7 +131,7 @@ body {
     grid-gap: 1rem;
     text-align: center;
 
-    @media screen and (min-width: var(--tablet-size)) {
+    @media screen and (min-width: 768px) {
       grid-gap: 2rem;
       grid-template-columns: auto auto;
     }
@@ -147,7 +146,7 @@ body {
 
 /** Posts Wrapper **/
 .posts {
-  @media screen and (min-width: var(--tablet-size)) {
+  @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
 }
@@ -156,7 +155,7 @@ body {
 .post {
   margin-bottom: 60px;
 
-  @media screen and (min-width: var(--tablet-size)) {
+  @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
 
@@ -165,7 +164,7 @@ body {
     margin-top: 0;
     margin-bottom: 1.5rem;
 
-    @media screen and (min-width: var(--tablet-size)) {
+    @media screen and (min-width: 768px) {
       font-size: 3.5rem;
     }
   }
@@ -179,7 +178,7 @@ body {
     font-size: 1.5rem;
     line-height: 1.35;
 
-    @media screen and (min-width: var(--tablet-size)) {
+    @media screen and (min-width: 768px) {
       font-size: 2rem;
     }
   }
@@ -192,7 +191,7 @@ body {
       font-size: 1.5rem;
       line-height: 1.35;
 
-      @media screen and (min-width: var(--tablet-size)) {
+      @media screen and (min-width: 768px) {
         font-size: 2rem;
       }
     }
@@ -207,7 +206,7 @@ body {
     }
 
     ul {
-      @media screen and (min-width: var(--tablet-size)) {
+      @media screen and (min-width: 768px) {
         padding-left: 4rem;
       }
 
@@ -237,7 +236,7 @@ body {
       width: 100%;
       margin: 64px auto;
 
-      @media screen and (min-width: var(--tablet-size)) {
+      @media screen and (min-width: 768px) {
         max-width: 800px;
       }
     }

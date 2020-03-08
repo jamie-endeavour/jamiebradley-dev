@@ -14,6 +14,7 @@
   --border-radius: 5px;
   --purple: #9473e2;
   --purple-dark: #7d55db;
+  --tablet-size: 768px;
 }
 
 html {
@@ -35,6 +36,11 @@ body {
 .container {
   margin: 0 auto;
   max-width: var(--container-size);
+  padding: 0 16px;
+
+  @media screen and (min-width: var(--tablet-size)) {
+    padding: 0;
+  }
 }
 
 /**
@@ -45,7 +51,11 @@ body {
   padding: 24px 0;
 
   .header__title {
-    font-size: 6rem;
+    font-size: 3rem;
+
+    @media screen and (min-width: var(--tablet-size)) {
+      font-size: 6rem;
+    }
   }
 
   .header__back-link {
@@ -118,8 +128,14 @@ body {
 @supports (display: grid) {
   .card--media {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 2rem;
+    grid-template-columns: 100%;
+    grid-gap: 1rem;
+    text-align: center;
+
+    @media screen and (min-width: var(--tablet-size)) {
+      grid-gap: 2rem;
+      grid-template-columns: auto auto;
+    }
   }
 }
 
@@ -131,17 +147,27 @@ body {
 
 /** Posts Wrapper **/
 .posts {
-  margin-bottom: 80px;
+  @media screen and (min-width: var(--tablet-size)) {
+    margin-bottom: 80px;
+  }
 }
 
 /** Post **/
 .post {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: var(--tablet-size)) {
+    margin-bottom: 80px;
+  }
 
   .post__title {
-    font-size: 3.5rem;
+    font-size: 2.25rem;
     margin-top: 0;
     margin-bottom: 1.5rem;
+
+    @media screen and (min-width: var(--tablet-size)) {
+      font-size: 3.5rem;
+    }
   }
 
   .post__link {
@@ -150,8 +176,12 @@ body {
   }
 
   .post__lede {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.35;
+
+    @media screen and (min-width: var(--tablet-size)) {
+      font-size: 2rem;
+    }
   }
 
   // Base Elements for dynamic data.
@@ -159,8 +189,12 @@ body {
     ul,
     li,
     p {
-      font-size: 2rem;
+      font-size: 1.5rem;
       line-height: 1.35;
+
+      @media screen and (min-width: var(--tablet-size)) {
+        font-size: 2rem;
+      }
     }
 
     p {
@@ -173,7 +207,9 @@ body {
     }
 
     ul {
-      padding-left: 4rem;
+      @media screen and (min-width: var(--tablet-size)) {
+        padding-left: 4rem;
+      }
 
       li {
         margin-bottom: 1.5rem;
@@ -198,8 +234,12 @@ body {
       box-shadow: aliceblue 0 5px 20px;
       border-radius: var(--border-radius);
       display: block;
-      max-width: 800px;
+      width: 100%;
       margin: 64px auto;
+
+      @media screen and (min-width: var(--tablet-size)) {
+        max-width: 800px;
+      }
     }
   }
 }

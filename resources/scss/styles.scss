@@ -82,7 +82,7 @@ body {
  * Common Reusable Components
  *
  * 1. Card: This component is used to display content, styled as a card.
- * 2. Post: This component is used for displaying posts. 
+ * 2. Post: This component is used for displaying posts.
  */
 .card {
   border-radius: var(--border-radius);
@@ -206,6 +206,7 @@ body {
       }
     }
 
+    ol,
     ul {
       @media screen and (min-width: 768px) {
         padding-left: 4rem;

@@ -366,7 +366,7 @@ body {
  * Common Reusable Components
  *
  * 1. Card: This component is used to display content, styled as a card.
- * 2. Post: This component is used for displaying posts. 
+ * 2. Post: This component is used for displaying posts.
  */
 .card {
   border-radius: var(--border-radius);
@@ -455,8 +455,10 @@ body {
     .post .post__body p:last-of-type {
       margin-bottom: 0; }
   @media screen and (min-width: 768px) {
+    .post .post__body ol,
     .post .post__body ul {
       padding-left: 4rem; } }
+  .post .post__body ol li,
   .post .post__body ul li {
     margin-bottom: 1.5rem; }
   .post .post__body h2 {

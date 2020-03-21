@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
-const groq = require("groq");
 const client = require("../utils/sanity.js");
 const serializers = require("../utils/serializers");
 const hasToken = !!client.config().token;
@@ -29,7 +28,7 @@ function checkForToken() {
 }
 
 async function getPosts() {
-  const url = `https://ghm8pz5f.api.sanity.io/v1/graphql/production/default`;
+  const url = `${client.clientConfig.url}/graphql/${client.clientConfig.dataset}/default`;
   const query = `
     query {
       allPost(sort: [{ publishedAt: ASC }], where: { _: { is_draft: false }}) {
@@ -48,7 +47,7 @@ async function getPosts() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.SANITY_READ_TOKEN}`
+      Authorization: `Bearer ${client.clientConfig.token}`
     },
     body: JSON.stringify({ query })
   };

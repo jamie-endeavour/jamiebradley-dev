@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
 const client = require("../utils/sanity.js");
 const serializers = require("../utils/serializers");

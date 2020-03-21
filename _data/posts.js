@@ -1,47 +1,74 @@
+require("dotenv").config();
+
 const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
 const groq = require("groq");
 const client = require("../utils/sanity.js");
 const serializers = require("../utils/serializers");
-const overlayDrafts = require("../utils/overlayDrafts");
 const hasToken = !!client.config().token;
+
+// Node fetch
+const fetch = require("node-fetch");
 
 function generatePost(post) {
   return {
     ...post,
-    body: BlocksToMarkdown(post.body, { serializers, ...client.config() }),
-    excerpt: BlocksToMarkdown(post.excerpt, { serializers, ...client.config() })
+    body: BlocksToMarkdown(post.bodyRaw, { serializers, ...client.config() }),
+    excerpt: BlocksToMarkdown(post.excerptRaw, { serializers, ...client.config() })
   };
 }
 
+function checkForToken() {
+  if (!hasToken) {
+    throw new Error(`
+      You did not provide a token. Make sure you have created a
+      token in your sanity account.
+    `);
+  }
+
+  return true;
+}
+
 async function getPosts() {
-  // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-  const filter = groq`*[_type == "post" && defined(slug) && publishedAt < now()]`;
-  const projection = groq`{
-    _id,
-    publishedAt,
-    title,
-    slug,
-    body[]{
-      ...,
-      children[]{
-        ...,
+  const url = `https://ghm8pz5f.api.sanity.io/v1/graphql/production/default`;
+  const query = `
+    query {
+      allPost(sort: [{ publishedAt: ASC }], where: { _: { is_draft: false }}) {
+        title
+        slug {
+          current
+        }
+        publishedAt
+        excerptRaw
+        bodyRaw
       }
+    }
+  `;
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.SANITY_READ_TOKEN}`
     },
-    excerpt[]{
-      ...,
-      children[]{
-        ...,
+    body: JSON.stringify({ query })
+  };
+
+  // Only proceed if the token check is successful
+  if (checkForToken()) {
+    try {
+      const res = await fetch(url, options);
+
+      if (res.status === 200) {
+        const json = await res.json();
+        return json.data.allPost.map(generatePost);
       }
-    },
-  }`;
-
-  const order = `| order(publishedAt asc)`;
-  const query = [filter, projection, order].join(" ");
-  const docs = await client.fetch(query).catch(err => console.error(err));
-  const reducedDocs = overlayDrafts(hasToken, docs);
-  const preparePosts = reducedDocs.map(generatePost);
-
-  return preparePosts;
+    } catch (err) {
+      throw new Error(`
+        There was a problem retrieving posts.
+        ${err.message}
+      `);
+    }
+  }
 }
 
 module.exports = getPosts;

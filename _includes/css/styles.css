@@ -309,13 +309,6 @@ template {
  * Custom Styles!
  */
 /* Define all css variables here... */
-:root {
-  --container-size: 1200px;
-  --body-bg: #fefefe;
-  --border-radius: 5px;
-  --purple: #9473e2;
-  --purple-dark: #7d55db; }
-
 html {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif; }
   @supports (font-variation-settings: normal) {
@@ -323,7 +316,7 @@ html {
       font-family: "Inter var", "Helvetica Neue", Arial, sans-serif; } }
 
 body {
-  background-color: var(--body-bg); }
+  background-color: #fefefe; }
 
 /**
  * Container element, used for containing content
@@ -331,7 +324,7 @@ body {
  */
 .container {
   margin: 0 auto;
-  max-width: var(--container-size);
+  max-width: 1200px;
   padding: 0 16px; }
   @media screen and (min-width: 768px) {
     .container {
@@ -353,7 +346,7 @@ body {
     .header .header__back-link a {
       text-decoration: none; }
     .header .header__back-link a:active {
-      color: var(--purple); }
+      color: #9473e2; }
 
 /**
  * Footer
@@ -369,8 +362,8 @@ body {
  * 2. Post: This component is used for displaying posts.
  */
 .card {
-  border-radius: var(--border-radius);
-  box-shadow: aliceblue 0 5px 20px;
+  border-radius: 5px;
+  box-shadow: rgba(209, 219, 228, 0.76) 0 5px 20px;
   border: 1px solid #fcfcfc;
   padding: 24px; }
   .card .card__copy {
@@ -408,7 +401,7 @@ body {
         text-align: left; } } }
 
 .card--featured {
-  border-bottom: 6px solid var(--purple);
+  border-bottom: 6px solid #9473e2;
   max-width: 850px;
   margin: 0 auto; }
 
@@ -431,7 +424,7 @@ body {
       .post .post__title {
         font-size: 3.5rem; } }
   .post .post__link {
-    color: var(--purple-dark);
+    color: #7d55db;
     text-decoration: none; }
   .post .post__lede {
     font-size: 1.5rem;
@@ -466,12 +459,12 @@ body {
   .post .post__body h3 {
     font-size: 2.5rem; }
   .post .post__body a {
-    color: var(--purple-dark);
+    color: #7d55db;
     font-weight: 500;
     text-decoration: underline; }
   .post .post__body img {
     box-shadow: aliceblue 0 5px 20px;
-    border-radius: var(--border-radius);
+    border-radius: 5px;
     display: block;
     width: 100%;
     margin: 64px auto; }
